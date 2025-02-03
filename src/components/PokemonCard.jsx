@@ -13,13 +13,31 @@ const StCard = styled.div`
   flex-direction: column;
 `;
 
-const PokemonCard = ({ data }) => {
+const PokemonCard = ({ pokemonDatas, myCards, setMyCards }) => {
+  const addPokemon = (id) => {
+    if (myCards.length > 5) return alert("6개만 가능!!");
+
+    const isItIn = myCards.find((index) => index.id === id);
+    if (isItIn) return alert("같은 카드!!");
+
+    const findCard = pokemonDatas.find((index) => index.id === id);
+
+    setMyCards([...myCards, findCard]);
+  };
+  console.log("myCards", myCards);
+
   return (
-    <StCard>
-      <img src={data.img_url} />
-      <div>{data.korean_name}</div>
-      <button>추가</button>
-    </StCard>
+    <>
+      {pokemonDatas.map((data) => {
+        return (
+          <StCard key={data.id}>
+            <img src={data.img_url} />
+            <div>{data.korean_name}</div>
+            <button onClick={() => addPokemon(data.id)}>추가</button>
+          </StCard>
+        );
+      })}
+    </>
   );
 };
 

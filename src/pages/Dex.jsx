@@ -1,12 +1,15 @@
+import { useState } from "react";
 import Dashboard from "../components/Dashboard";
 import PokemonList from "../components/PokemonList";
 
 const Dex = () => {
+  const [myCards, setMyCards] = useState([]);
+
   return (
     <>
-      <Dashboard />
+      <Dashboard myCards={myCards} setMyCards={setMyCards} />
       <br />
-      <PokemonList />
+      <PokemonList myCards={myCards} setMyCards={setMyCards} />
     </>
   );
 };

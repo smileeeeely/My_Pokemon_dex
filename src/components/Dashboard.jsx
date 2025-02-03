@@ -1,4 +1,7 @@
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import styled from "styled-components";
+import PokemonCard from "./PokemonCard";
 
 const StTitle = styled.div`
   width: auto;
@@ -13,7 +16,7 @@ const StForm = styled.form`
   gap: 50px;
 `;
 
-const StCard = styled.div`
+const StMyCard = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 5px;
@@ -24,18 +27,19 @@ const StCard = styled.div`
   align-items: center;
 `;
 
-const Dashboard = () => {
+const Dashboard = ({ myCards, setMyCards }) => {
   return (
     <>
       <StTitle>
         <h2>나만의 포켓몬</h2>
         <StForm>
-          <StCard>드래곤볼</StCard>
-          <StCard>드래곤볼</StCard>
-          <StCard>드래곤볼</StCard>
-          <StCard>드래곤볼</StCard>
-          <StCard>드래곤볼</StCard>
-          <StCard>드래곤볼</StCard>
+          {myCards.map((card) => {
+            return (
+              <StMyCard key={card.id}>
+                <div>{card.korean_name}</div>
+              </StMyCard>
+            );
+          })}
         </StForm>
       </StTitle>
     </>

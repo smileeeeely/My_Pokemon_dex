@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import MOCK_DATA from "./MOCA_DATA";
@@ -13,20 +14,13 @@ const StListBorder = styled.div`
   grid-gap: 20px;
 `;
 
-const PokemonList = () => {
+const PokemonList = ({ myCards, setMyCards }) => {
   const pokemonDatas = MOCK_DATA;
-  console.log('pokemonDatas',pokemonDatas)
 
   return (
     <>
       <StListBorder>
-        {
-            pokemonDatas.map((data) => {
-                return(
-                    <PokemonCard key={data.id} data={data}/>
-                )
-            })
-        }
+        <PokemonCard pokemonDatas={pokemonDatas} myCards={myCards} setMyCards={setMyCards} />
       </StListBorder>
     </>
   );
