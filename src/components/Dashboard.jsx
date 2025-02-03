@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
 import styled from "styled-components";
-import PokemonCard from "./PokemonCard";
 
 const StTitle = styled.div`
   width: auto;
@@ -11,36 +9,45 @@ const StTitle = styled.div`
   justify-items: center;
 `;
 
-const StForm = styled.form`
+const StDiv = styled.div`
   display: flex;
   gap: 50px;
 `;
 
-const StMyCard = styled.div`
+const StCard = styled.div`
   width: 100px;
-  height: 100px;
+  height: 150px;
   border-radius: 5px;
-  border: 2px dashed #b2b2b2;
   background-color: white;
+  border: 1px solid lightgray;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 const Dashboard = ({ myCards, setMyCards }) => {
+  const removePokemon = (id) => {
+    const filterdCards = myCards.filter((card) => card.id !== id);
+
+    setMyCards(filterdCards);
+  };
+
   return (
     <>
       <StTitle>
         <h2>나만의 포켓몬</h2>
-        <StForm>
-          {myCards.map((card) => {
+        <StDiv>
+          {myCards.map((data) => {
             return (
-              <StMyCard key={card.id}>
-                <div>{card.korean_name}</div>
-              </StMyCard>
+              <StCard key={data.id}>
+                <img src={data.img_url} />
+                <div>{data.korean_name}</div>
+                <button onClick={() => removePokemon(data.id)}>삭제</button>
+              </StCard>
             );
           })}
-        </StForm>
+        </StDiv>
       </StTitle>
     </>
   );
