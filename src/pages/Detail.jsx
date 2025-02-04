@@ -43,15 +43,13 @@ const Detail = () => {
 
   const pokemons = MOCK_DATA;
   const pokemonDetail = pokemons.find((pokemon) => pokemon.id === detailPageId);
-  console.log("pokemonDetail", pokemonDetail);
-  console.log("pokemonDetail", pokemonDetail.types[0]);
 
   return (
     <>
       <StContainer>
         <StImg src={pokemonDetail.img_url} />
         <StName>{pokemonDetail.korean_name}</StName>
-        <StDiv>타입 : {pokemonDetail.types[0]}</StDiv>
+        <StDiv>타입 : {pokemonDetail.types.join(", ")}</StDiv>
         <StDiv>{pokemonDetail.description}</StDiv>
         <StButton
           onClick={() => {

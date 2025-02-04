@@ -3,21 +3,26 @@
 import { useNavigate } from "react-router-dom";
 
 const PokemonCard = ({ pokemons, myPokemons, setMyPokemons, StCard }) => {
+  /** 내 포켓몬덱에 포켓몬 추가하기 */
   const addMyPokemon = (id) => {
-    if (myPokemons.length > 5) return alert("6개만 가능!!");
+    const filteredPokemons = myPokemons.filter((pokemon) => typeof pokemon.id !== "string");
+    if (filteredPokemons.length === 6) {
+      return alert("더 이상 선택할 수 없습니다.");
+    }
 
     const isItIn = myPokemons.find((pokemon) => pokemon.id === id);
-    if (isItIn) return alert("같은 카드!!");
-
-    const myNewPokemon = pokemons.find((pokemon) => pokemon.id === id);
-
-    setMyPokemons([...myPokemons, myNewPokemon]);
+    if (isItIn) return alert("이미 선택된 포켓몬입니다.");
+    
+    filteredPokemons.push(pokemons.find((pokemon) => pokemon.id === id));
+    let pushRamdomUUID = 6 - filteredPokemons.length;
+    while(pushRamdomUUID--){
+      filteredPokemons.push({id: crypto.randomUUID()})
+    }
+    setMyPokemons(filteredPokemons)
   };
-  console.log("myPokemons", myPokemons);
 
   const navigate = useNavigate();
-  const navigateToDetail = (pokemonId, e) => {
-    if (("e", e.target.localName === "button")) return;
+  const navigateToDetail = (pokemonId) => {
     navigate(`/detail?id=${pokemonId}`);
   };
 
@@ -25,12 +30,14 @@ const PokemonCard = ({ pokemons, myPokemons, setMyPokemons, StCard }) => {
     <>
       {pokemons.map((pokemon) => {
         return (
-          <StCard
-            key={pokemon.id}
-            onClick={(e) => navigateToDetail(pokemon.id, e)}
-          >
-            <img src={pokemon.img_url} />
-            <div>{pokemon.korean_name}</div>
+          <StCard key={pokemon.id}>
+            <img
+              onClick={() => navigateToDetail(pokemon.id)}
+              src={pokemon.img_url}
+            />
+            <div onClick={() => navigateToDetail(pokemon.id)}>
+              {pokemon.korean_name}
+            </div>
             <button type="button" onClick={() => addMyPokemon(pokemon.id)}>
               추가
             </button>

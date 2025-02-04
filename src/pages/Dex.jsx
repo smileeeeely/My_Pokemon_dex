@@ -15,8 +15,18 @@ const StCard = styled.div`
   flex-direction: column;
 `;
 
+const nonPokemon = () => {
+  let i = 0;
+  let randomIds = [];
+  while (i < 6) {
+    i++;
+    randomIds.push({ id: crypto.randomUUID()});
+  }
+  return randomIds;
+};
+
 const Dex = () => {
-  const [myPokemons, setMyPokemons] = useState([]);
+  const [myPokemons, setMyPokemons] = useState(nonPokemon());
 
   return (
     <>

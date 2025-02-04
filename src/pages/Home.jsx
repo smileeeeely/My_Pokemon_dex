@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const StHome = styled.body`
+const StHome = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
