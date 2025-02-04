@@ -1,39 +1,26 @@
 /* eslint-disable react/prop-types */
-import styled from "styled-components";
 
-const StCard = styled.div`
-  width: 100px;
-  height: 150px;
-  border-radius: 5px;
-  background-color: white;
-  border: 1px solid lightgray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
+const PokemonCard = ({ pokemons, myPokemons, setMyPokemons, StCard }) => {
+  const addMyPokemon = (id) => {
+    if (myPokemons.length > 5) return alert("6개만 가능!!");
 
-const PokemonCard = ({ pokemonDatas, myCards, setMyCards }) => {
-  const addPokemon = (id) => {
-    if (myCards.length > 5) return alert("6개만 가능!!");
-
-    const isItIn = myCards.find((index) => index.id === id);
+    const isItIn = myPokemons.find((pokemon) => pokemon.id === id);
     if (isItIn) return alert("같은 카드!!");
 
-    const findCard = pokemonDatas.find((index) => index.id === id);
+    const myNewPokemon = pokemons.find((pokemon) => pokemon.id === id);
 
-    setMyCards([...myCards, findCard]);
+    setMyPokemons([...myPokemons, myNewPokemon]);
   };
-  console.log("myCards", myCards);
+  console.log("myPokemons", myPokemons);
 
   return (
     <>
-      {pokemonDatas.map((data) => {
+      {pokemons.map((pokemon) => {
         return (
-          <StCard key={data.id}>
-            <img src={data.img_url} />
-            <div>{data.korean_name}</div>
-            <button onClick={() => addPokemon(data.id)}>추가</button>
+          <StCard key={pokemon.id}>
+            <img src={pokemon.img_url} />
+            <div>{pokemon.korean_name}</div>
+            <button onClick={() => addMyPokemon(pokemon.id)}>추가</button>
           </StCard>
         );
       })}

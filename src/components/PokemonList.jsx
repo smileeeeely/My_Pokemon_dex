@@ -14,13 +14,18 @@ const StListBorder = styled.div`
   grid-gap: 20px;
 `;
 
-const PokemonList = ({ myCards, setMyCards }) => {
-  const pokemonDatas = MOCK_DATA;
+const PokemonList = ({ myPokemons, setMyPokemons, StCard }) => {
+  const pokemons = MOCK_DATA;
 
   return (
     <>
       <StListBorder>
-        <PokemonCard pokemonDatas={pokemonDatas} myCards={myCards} setMyCards={setMyCards} />
+        <PokemonCard
+          pokemons={pokemons}
+          myPokemons={myPokemons}
+          setMyPokemons={setMyPokemons}
+          StCard={StCard}
+        />
       </StListBorder>
     </>
   );

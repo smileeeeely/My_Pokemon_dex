@@ -14,23 +14,11 @@ const StDiv = styled.div`
   gap: 50px;
 `;
 
-const StCard = styled.div`
-  width: 100px;
-  height: 150px;
-  border-radius: 5px;
-  background-color: white;
-  border: 1px solid lightgray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
+const Dashboard = ({ myPokemons, setMyPokemons, StCard }) => {
+  const removeMyPokemon = (id) => {
+    const filterdMyPokemons = myPokemons.filter((pokemon) => pokemon.id !== id);
 
-const Dashboard = ({ myCards, setMyCards }) => {
-  const removePokemon = (id) => {
-    const filterdCards = myCards.filter((card) => card.id !== id);
-
-    setMyCards(filterdCards);
+    setMyPokemons(filterdMyPokemons);
   };
 
   return (
@@ -38,12 +26,14 @@ const Dashboard = ({ myCards, setMyCards }) => {
       <StTitle>
         <h2>나만의 포켓몬</h2>
         <StDiv>
-          {myCards.map((data) => {
+          {myPokemons.map((pokemon) => {
             return (
-              <StCard key={data.id}>
-                <img src={data.img_url} />
-                <div>{data.korean_name}</div>
-                <button onClick={() => removePokemon(data.id)}>삭제</button>
+              <StCard key={pokemon.id}>
+                <img src={pokemon.img_url} />
+                <div>{pokemon.korean_name}</div>
+                <button onClick={() => removeMyPokemon(pokemon.id)}>
+                  삭제
+                </button>
               </StCard>
             );
           })}
