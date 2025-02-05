@@ -1,8 +1,10 @@
-/* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
 import { StAddAndDeleteButton, StCard, StDiv, StPokemonBalImg, StTitle } from "./StyledComponents";
+import { useContext } from "react";
+import { PokemonContext } from "../contexts/PokemonContext";
 
-const Dashboard = ({ myPokemons, setMyPokemons}) => {
+const Dashboard = () => {
+  const {myPokemons, setMyPokemons} = useContext(PokemonContext);
   const removeMyPokemon = (id) => {
     const filterdMyPokemons = myPokemons.filter((pokemon) => pokemon.id !== id);
     filterdMyPokemons.push({ id: crypto.randomUUID() });

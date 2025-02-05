@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
-import MOCK_DATA from "./MOCA_DATA";
+import MOCK_DATA from "../contexts/MOCA_DATA";
 
 const StListBorder = styled.div`
   width: auto;
@@ -14,18 +13,13 @@ const StListBorder = styled.div`
   grid-gap: 20px;
 `;
 
-const PokemonList = ({ myPokemons, setMyPokemons, StCard }) => {
+const PokemonList = () => {
   const pokemons = MOCK_DATA;
 
   return (
     <>
       <StListBorder>
-        <PokemonCard
-          pokemons={pokemons}
-          myPokemons={myPokemons}
-          setMyPokemons={setMyPokemons}
-          StCard={StCard}
-        />
+        <PokemonCard pokemons={pokemons} />
       </StListBorder>
     </>
   );
