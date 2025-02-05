@@ -1,39 +1,12 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import MOCK_DATA from "../components/MOCA_DATA";
-import styled from "styled-components";
-
-const StContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const StImg = styled.img`
-  height: 200px;
-  width: 200px;
-`;
-
-const StDiv = styled.div`
-  padding: 4vh;
-`;
-
-const StButton = styled.button`
-  color: white;
-  background-color: black;
-  border-radius: 5px;
-  height: 30px;
-  width: 70px;
-`;
-
-const StName = styled.h1`
-  padding: 2vh;
-  color: red;
-  font-weight: 900;
-  font-size: x-large;
-`;
+import {
+  StContainer,
+  StImg,
+  StName,
+  StOutButton,
+  StPadding,
+} from "../components/StyledComponents";
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -49,15 +22,15 @@ const Detail = () => {
       <StContainer>
         <StImg src={pokemonDetail.img_url} />
         <StName>{pokemonDetail.korean_name}</StName>
-        <StDiv>타입 : {pokemonDetail.types.join(", ")}</StDiv>
-        <StDiv>{pokemonDetail.description}</StDiv>
-        <StButton
+        <StPadding>타입 : {pokemonDetail.types.join(", ")}</StPadding>
+        <StPadding>{pokemonDetail.description}</StPadding>
+        <StOutButton
           onClick={() => {
             navigate("/dex");
           }}
         >
           뒤로 가기
-        </StButton>
+        </StOutButton>
       </StContainer>
     </>
   );
