@@ -32,6 +32,10 @@ export const StOutButton = styled.button`
   height: 30px;
   width: 70px;
   cursor: pointer;
+  &:hover{
+    background-color: white;
+    color: black;
+  }
 `;
 
 export const StCard = styled.div`
@@ -103,6 +107,9 @@ export const StAddAndDeleteButton = styled.button`
   cursor: pointer;
   width: 40px;
   height: 25px;
+  &:hover{
+    background-color: #8f0d0d;
+  }
 `;
 export const StHome = styled.div`
   display: flex;
