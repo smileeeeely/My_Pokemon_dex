@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { StAddAndDeleteButton, StCard } from "./StyledComponents";
 import { useContext } from "react";
-import { MyPokemonsContext} from "../contexts/MyPokemonsContext";
+import { MyPokemonsContext } from "../contexts/MyPokemonsContext";
 import { PokemonsContext } from "../contexts/PokemonsContext";
 
 const PokemonCard = () => {

@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
-import {
-  StHome,
-  StHomeButton,
-} from "../components/StyledComponents";
-import PokemonLogo from "./PokemonLogo.png"
+import { StHome, StHomeButton } from "../components/StyledComponents";
+import PokemonLogo from "./PokemonLogo.png";
 
 const Home = () => {
   return (

@@ -5,7 +5,6 @@ const Dex = () => {
   return (
     <>
       <Dashboard />
-      <br />
       <PokemonList />
     </>
   );

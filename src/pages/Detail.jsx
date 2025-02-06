@@ -18,22 +18,20 @@ const Detail = () => {
   const pokemonDetail = pokemons.find((pokemon) => pokemon.id === detailPageId);
 
   return (
-    <>
-      <StContainer>
-        <StImg src={pokemonDetail.img_url} />
-        <StName>{pokemonDetail.korean_name}</StName>
-        <div>No.{pokemonDetail.id}</div>
-        <StPadding>타입 : {pokemonDetail.types.join(", ")}</StPadding>
-        <StPadding>{pokemonDetail.description}</StPadding>
-        <StOutButton
-          onClick={() => {
-            navigate("/dex");
-          }}
-        >
-          뒤로 가기
-        </StOutButton>
-      </StContainer>
-    </>
+    <StContainer>
+      <StImg src={pokemonDetail.img_url} />
+      <StName>{pokemonDetail.korean_name}</StName>
+      <div>No.{pokemonDetail.id}</div>
+      <StPadding>타입 : {pokemonDetail.types.join(", ")}</StPadding>
+      <StPadding>{pokemonDetail.description}</StPadding>
+      <StOutButton
+        onClick={() => {
+          navigate("/dex");
+        }}
+      >
+        뒤로 가기
+      </StOutButton>
+    </StContainer>
   );
 };
 

@@ -3,11 +3,9 @@ import { StListBorder } from "./StyledComponents";
 
 const PokemonList = () => {
   return (
-    <>
-      <StListBorder>
-        <PokemonCard />
-      </StListBorder>
-    </>
+    <StListBorder>
+      <PokemonCard />
+    </StListBorder>
   );
 };
 

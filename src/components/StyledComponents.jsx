@@ -56,15 +56,16 @@ export const StHeather = styled.div`
   align-items: center;
   justify-content: center;
   justify-items: center;
+  margin: 30px;
 `;
 
 export const StTitle = styled.h1`
   font-size: xx-large;
 `;
 
-export const StDiv = styled.div`
+export const StDashboardDiv = styled.div`
   display: flex;
-  gap: 3.125rem;
+  gap: 2.125rem;
 `;
 
 export const StPokemonBalImg = styled.img`
@@ -114,4 +115,5 @@ export const StListBorder = styled.div`
   grid-auto-rows: minmax(100px, auto);
   grid-gap: 20px;
   padding: 25px;
+  margin: 30px;
 `;
