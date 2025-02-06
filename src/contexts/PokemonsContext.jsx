@@ -5,6 +5,7 @@ import MOCK_DATA from "./MOCK_DATA";
 
 export const PokemonsContext = createContext();
 
+/** Pokemons 데이터 Context Provider */
 export function PokemonsProvider({ children }) {
   const pokemons = MOCK_DATA;
   return (

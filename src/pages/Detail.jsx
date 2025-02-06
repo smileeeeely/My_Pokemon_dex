@@ -22,6 +22,7 @@ const Detail = () => {
       <StContainer>
         <StImg src={pokemonDetail.img_url} />
         <StName>{pokemonDetail.korean_name}</StName>
+        <div>No.{pokemonDetail.id}</div>
         <StPadding>타입 : {pokemonDetail.types.join(", ")}</StPadding>
         <StPadding>{pokemonDetail.description}</StPadding>
         <StOutButton

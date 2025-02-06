@@ -44,6 +44,7 @@ const PokemonCard = () => {
             <div onClick={() => navigateToDetail(pokemon.id)}>
               {pokemon.korean_name}
             </div>
+            <div>No.{pokemon.id}</div>
             <StAddAndDeleteButton
               type="button"
               onClick={() => addMyPokemon(pokemon.id)}

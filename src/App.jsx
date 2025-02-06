@@ -8,6 +8,9 @@ const GlobalStyle = createGlobalStyle`
 ${reset}
 body{
   background-color: #ffedc3;
+  display: flex;
+    flex-direction: column;
+    justify-content: center; 
 }
 `;
 const App = () => {

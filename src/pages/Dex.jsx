@@ -4,9 +4,9 @@ import PokemonList from "../components/PokemonList";
 const Dex = () => {
   return (
     <>
-      <Dashboard key={`dashboardKey`} />
+      <Dashboard />
       <br />
-      <PokemonList key={`pokemonListKey`} />
+      <PokemonList />
     </>
   );
 };
