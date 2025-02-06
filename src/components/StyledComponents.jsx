@@ -100,11 +100,9 @@ export const StHomeButton = styled.button`
   color: white;
   border: none;
   margin: 0px;
+  cursor: pointer;
 `;
 
-export const StHomeTitle = styled.h1`
-  color: #ffbf00;
-`;
 
 export const StListBorder = styled.div`
   width: 100vw;
