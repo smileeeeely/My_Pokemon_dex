@@ -1,15 +1,12 @@
 import Dashboard from "../components/Dashboard";
 import PokemonList from "../components/PokemonList";
 
-
-
 const Dex = () => {
-
   return (
     <>
-      <Dashboard  />
+      <Dashboard key={`dashboardKey`} />
       <br />
-      <PokemonList />
+      <PokemonList key={`pokemonListKey`} />
     </>
   );
 };

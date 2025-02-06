@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
-import MOCK_DATA from "../contexts/MOCA_DATA";
 
 const StListBorder = styled.div`
   width: auto;
@@ -14,12 +13,10 @@ const StListBorder = styled.div`
 `;
 
 const PokemonList = () => {
-  const pokemons = MOCK_DATA;
-
   return (
     <>
-      <StListBorder>
-        <PokemonCard pokemons={pokemons} />
+      <StListBorder key={`stListBorderKey`}>
+        <PokemonCard />
       </StListBorder>
     </>
   );

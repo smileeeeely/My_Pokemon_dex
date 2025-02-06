@@ -1,5 +1,5 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
-import MOCK_DATA from "../contexts/MOCA_DATA";
+import MOCK_DATA from "../contexts/MOCK_DATA";
 import {
   StContainer,
   StImg,

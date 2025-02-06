@@ -1,7 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import Router from "./shared/Router";
 import reset from "styled-reset";
-import { PokemonProvider } from "./contexts/PokemonContext";
+import { MyPokemonsProvider } from "./contexts/MyPokemonsContext";
+import { PokemonsProvider } from "./contexts/PokemonsContext";
 
 const GlobalStyle = createGlobalStyle`
 ${reset}
@@ -11,10 +12,12 @@ body{
 `;
 const App = () => {
   return (
-    <PokemonProvider>
-      <GlobalStyle />
-      <Router />
-    </PokemonProvider>
+    <PokemonsProvider>
+      <MyPokemonsProvider>
+        <GlobalStyle />
+        <Router />
+      </MyPokemonsProvider>
+    </PokemonsProvider>
   );
 };
 

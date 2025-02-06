@@ -11,15 +11,13 @@ const nonPokemon = () => {
   return randomIds;
 };
 
-export const PokemonContext = createContext();
+export const MyPokemonsContext = createContext();
 
-export function PokemonProvider({ children }) {
+export function MyPokemonsProvider({ children }) {
   const [myPokemons, setMyPokemons] = useState(nonPokemon());
-  console.log(myPokemons);
-  console.log('children',children)
   return (
-    <PokemonContext.Provider value={{ myPokemons, setMyPokemons }}>
+    <MyPokemonsContext.Provider value={{ myPokemons, setMyPokemons }}>
       {children}
-    </PokemonContext.Provider>
+    </MyPokemonsContext.Provider>
   );
 }

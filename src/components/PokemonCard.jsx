@@ -1,12 +1,12 @@
-/* eslint-disable react/prop-types */
-
 import { useNavigate } from "react-router-dom";
 import { StAddAndDeleteButton, StCard } from "./StyledComponents";
 import { useContext } from "react";
-import { PokemonContext } from "../contexts/PokemonContext";
+import { MyPokemonsContext} from "../contexts/MyPokemonsContext";
+import { PokemonsContext } from "../contexts/PokemonsContext";
 
-const PokemonCard = ({ pokemons }) => {
-  const {myPokemons, setMyPokemons} = useContext(PokemonContext);
+const PokemonCard = () => {
+  const { myPokemons, setMyPokemons } = useContext(MyPokemonsContext);
+  const { pokemons } = useContext(PokemonsContext);
   /** 내 포켓몬덱에 포켓몬 추가하기 */
   const addMyPokemon = (id) => {
     const filteredPokemons = myPokemons.filter(
