@@ -8,6 +8,7 @@ import {
   StPadding,
 } from "../components/StyledComponents";
 
+/** 포켓몬 디테일 페이지 */
 const Detail = () => {
   const navigate = useNavigate();
 

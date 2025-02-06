@@ -35,9 +35,8 @@ export const StOutButton = styled.button`
 `;
 
 export const StCard = styled.div`
-  width: 130px;
   height: 200px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: white;
   border: 1px solid lightgray;
   display: flex;
@@ -45,32 +44,55 @@ export const StCard = styled.div`
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
 `;
 
 export const StHeather = styled.div`
-  width: 100vw;
-  height: 250px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: aliceblue;
-  padding: 15px;
-  align-items: center;
-  justify-content: center;
   justify-items: center;
-  margin: 30px;
+  margin: 20px;
+  border: 1px solid rgb(221, 221, 221);
+  padding: 20px;
 `;
 
 export const StTitle = styled.h1`
-  font-size: xx-large;
+  font-size: 1.5em;
+  color: red;
+  margin-bottom: 10px;
+  padding: 15px;
 `;
 
 export const StDashboardDiv = styled.div`
   display: flex;
   gap: 2.125rem;
+  display: flex;
+  position: relative;
+
+  @media (max-width: 768px) {
+    position: relative;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 `;
 
 export const StPokemonBalImg = styled.img`
-  width: 6.25rem;
-  height: 6.25rem;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(255, 255, 255);
+  border: 2px dashed rgb(204, 204, 204);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
 `;
 
 export const StAddAndDeleteButton = styled.button`
@@ -104,16 +126,13 @@ export const StHomeButton = styled.button`
   cursor: pointer;
 `;
 
-
 export const StListBorder = styled.div`
-  width: 100vw;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: aliceblue;
-  justify-items: center;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  grid-auto-rows: minmax(100px, auto);
-  grid-gap: 20px;
-  padding: 25px;
-  margin: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid rgb(221, 221, 221);
 `;
