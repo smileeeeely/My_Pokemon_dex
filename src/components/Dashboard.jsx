@@ -1,8 +1,15 @@
 /* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
-import { StAddAndDeleteButton, StCard, StDiv, StPokemonBalImg, StTitle } from "./StyledComponents";
+import {
+  StAddAndDeleteButton,
+  StCard,
+  StDiv,
+  StPokemonBalImg,
+  StHeader,
+  StTitle,
+} from "./StyledComponents";
 
-const Dashboard = ({ myPokemons, setMyPokemons}) => {
+const Dashboard = ({ myPokemons, setMyPokemons }) => {
   const removeMyPokemon = (id) => {
     const filterdMyPokemons = myPokemons.filter((pokemon) => pokemon.id !== id);
     filterdMyPokemons.push({ id: crypto.randomUUID() });
@@ -17,8 +24,8 @@ const Dashboard = ({ myPokemons, setMyPokemons}) => {
 
   return (
     <>
-      <StTitle>
-        <h2>나만의 포켓몬</h2>
+      <StHeader>
+        <StTitle>나만의 포켓몬</StTitle>
         <StDiv>
           {myPokemons.map((pokemon) => {
             if (typeof pokemon.id === "string") {
@@ -29,7 +36,6 @@ const Dashboard = ({ myPokemons, setMyPokemons}) => {
               );
             } else {
               return (
-                <>
                   <StCard key={pokemon.id}>
                     <img
                       src={pokemon.img_url}
@@ -38,16 +44,18 @@ const Dashboard = ({ myPokemons, setMyPokemons}) => {
                     <div onClick={() => navigateToDetail(pokemon.id)}>
                       {pokemon.korean_name}{" "}
                     </div>
-                    <StAddAndDeleteButton onClick={() => removeMyPokemon(pokemon.id)}>
+                    <div>No.{pokemon.id}</div>
+                    <StAddAndDeleteButton
+                      onClick={() => removeMyPokemon(pokemon.id)}
+                    >
                       삭제
                     </StAddAndDeleteButton>
                   </StCard>
-                </>
               );
             }
           })}
         </StDiv>
-      </StTitle>
+      </StHeader>
     </>
   );
 };

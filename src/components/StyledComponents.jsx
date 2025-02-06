@@ -33,9 +33,10 @@ export const StOutButton = styled.button`
   width: 70px;
   cursor: pointer;
 `;
+
 export const StCard = styled.div`
-  width: 100px;
-  height: 150px;
+  width: 150px;
+  height: 200px;
   border-radius: 5px;
   background-color: white;
   border: 1px solid lightgray;
@@ -46,26 +47,37 @@ export const StCard = styled.div`
   cursor: pointer;
 `;
 
-export const StTitle = styled.div`
+export const StHeader = styled.div`
   width: auto;
-  height: 200px;
+  height: 250px;
   border-radius: 5px;
   background-color: aliceblue;
   justify-items: center;
+  margin: 20px;
 `;
+
+export const StTitle = styled.h1`
+  font-size: xx-large;
+`
 
 export const StDiv = styled.div`
   display: flex;
-  gap: 50px;
+  gap: 30px;
 `;
 
 export const StPokemonBalImg = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
 `;
 
 export const StAddAndDeleteButton = styled.button`
   cursor: pointer;
+  background-color: #ff1818;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 40px;
+  height: 25px;
 `
 export const StHome = styled.div`
   display: flex;
@@ -86,8 +98,18 @@ export const StHomeButton = styled.button`
   color: white;
   border: none;
   margin: 0px;
+  cursor: pointer;
 `;
 
-export const StHomeTitle = styled.h1`
-  color: #ffbf00;
+export const StListBorder = styled.div`
+  width: auto;
+  border-radius: 5px;
+  background-color: aliceblue;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 20px;
+  margin: 20px;
+  padding: 20px;
 `;

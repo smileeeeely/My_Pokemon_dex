@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import {
   StHome,
   StHomeButton,
-  StHomeTitle,
 } from "../components/StyledComponents";
+import PokemonLogo from "./PokemonLogo.png";
 
 const Home = () => {
   return (
     <StHome>
-      <StHomeTitle>Pokemon</StHomeTitle>
+    <img src={PokemonLogo} />
       <Link to={"/Dex"}>
         <StHomeButton>포켓몬도감 시작하기</StHomeButton>
       </Link>

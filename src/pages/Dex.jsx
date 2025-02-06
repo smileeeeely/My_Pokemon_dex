@@ -18,7 +18,6 @@ const Dex = () => {
   return (
     <>
       <Dashboard myPokemons={myPokemons} setMyPokemons={setMyPokemons} />
-      <br />
       <PokemonList myPokemons={myPokemons} setMyPokemons={setMyPokemons} />
     </>
   );
