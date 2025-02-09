@@ -32,7 +32,8 @@ export const StOutButton = styled.button`
   height: 30px;
   width: 70px;
   cursor: pointer;
-  &:hover{
+
+  &:hover {
     background-color: white;
     color: black;
   }
@@ -55,7 +56,6 @@ export const StCard = styled.div`
   &:hover {
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    z-index: 10;
   }
 `;
 
@@ -77,14 +77,12 @@ export const StTitle = styled.h1`
 
 export const StDashboardDiv = styled.div`
   display: flex;
-  gap: 2.125rem;
-  display: flex;
+  gap: 4rem;
   position: relative;
 
-  @media (max-width: 768px) {
-    position: relative;
+  @media (max-width: 1027px) {
     flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
   }
 `;
 
@@ -107,7 +105,8 @@ export const StAddAndDeleteButton = styled.button`
   cursor: pointer;
   width: 40px;
   height: 25px;
-  &:hover{
+
+  &:hover {
     background-color: #8f0d0d;
   }
 `;

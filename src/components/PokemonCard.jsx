@@ -20,8 +20,8 @@ const PokemonCard = () => {
     if (isItIn) return alert("이미 선택된 포켓몬입니다.");
 
     filteredPokemons.push(pokemons.find((pokemon) => pokemon.id === id));
-    let pushRamdomUUID = 6 - filteredPokemons.length;
-    while (pushRamdomUUID--) {
+    let pushRandomUUID = 6 - filteredPokemons.length;
+    while (pushRandomUUID--) {
       filteredPokemons.push({ id: crypto.randomUUID() });
     }
     setMyPokemons(filteredPokemons);
