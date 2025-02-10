@@ -1,12 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import { StAddAndDeleteButton, StCard } from "./StyledComponents";
-import { useContext } from "react";
-import { MyPokemonsContext } from "../contexts/MyPokemonsContext";
-import { PokemonsContext } from "../contexts/PokemonsContext";
+// import { useContext } from "react";
+// import { MyPokemonsContext } from "../contexts/MyPokemonsContext";
+import { useDispatch, useSelector } from "react-redux";
+import MOCK_DATA from "./MOCK_DATA";
+import { setMyPokemons } from "../redux/slices/pokemonSlice";
 
 const PokemonCard = () => {
-  const { myPokemons, setMyPokemons } = useContext(MyPokemonsContext);
-  const { pokemons } = useContext(PokemonsContext);
+  // const { myPokemons, setMyPokemons } = useContext(MyPokemonsContext);
+  const pokemons = MOCK_DATA;
+  const myPokemons = useSelector(function (a) {
+    return a.myPokemons.list;
+  });
+  const dispatch = useDispatch();
+
   /** 내 포켓몬덱에 포켓몬 추가하기 */
   const addMyPokemon = (id) => {
     const filteredPokemons = myPokemons.filter(
@@ -24,7 +31,8 @@ const PokemonCard = () => {
     while (pushRandomUUID--) {
       filteredPokemons.push({ id: crypto.randomUUID() });
     }
-    setMyPokemons(filteredPokemons);
+    // setMyPokemons(filteredPokemons);
+    dispatch(setMyPokemons(filteredPokemons))
   };
 
   const navigate = useNavigate();
@@ -47,7 +55,9 @@ const PokemonCard = () => {
             <div>No.{pokemon.id}</div>
             <StAddAndDeleteButton
               type="button"
-              onClick={() => addMyPokemon(pokemon.id)}
+              onClick={() => {
+                addMyPokemon(pokemon.id);
+              }}
             >
               추가
             </StAddAndDeleteButton>
