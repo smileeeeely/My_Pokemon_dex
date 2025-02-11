@@ -13,7 +13,6 @@ const PokemonCard = () => {
     return a.myPokemons.list;
   });
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
   const navigateToDetail = (pokemonId) => {
     navigate(`/detail?id=${pokemonId}`);
