@@ -25,7 +25,7 @@ export const StPadding = styled.div`
   padding: 4vh;
 `;
 
-export const StOutButton = styled.button`
+export const StDetailButton = styled.button`
   color: white;
   background-color: black;
   border-radius: 5px;

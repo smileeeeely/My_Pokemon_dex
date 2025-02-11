@@ -11,20 +11,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { setMyPokemons } from "../redux/slices/pokemonSlice";
 
 const Dashboard = () => {
-  // const { myPokemons, setMyPokemons } = useContext(MyPokemonsContext);
   const myPokemons = useSelector(function (a) {
     return a.myPokemons.list;
   });
   const dispatch = useDispatch();
 
-  /** 나만의 포케몬에 포케몬 삭제 */
+  /** 내 포켓몬 덱에 포케몬 삭제 */
   const removeMyPokemon = (id) => {
     const filterdMyPokemons = myPokemons.filter((pokemon) => pokemon.id !== id);
     filterdMyPokemons.push({ id: crypto.randomUUID() });
     dispatch(setMyPokemons(filterdMyPokemons));
   };
 
-  /** 포케몬카드 클릭했을 때 디테일 페이지로 전환 */
+  /** 포켓몬카드 클릭했을 때 디테일 페이지로 전환 */
   const navigate = useNavigate();
   const navigateToDetail = (pokemonId) => {
     navigate(`/detail?id=${pokemonId}`);
