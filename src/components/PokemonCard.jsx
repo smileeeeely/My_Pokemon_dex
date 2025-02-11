@@ -13,6 +13,7 @@ const PokemonCard = ({ pokemons, myPokemons, setMyPokemons }) => {
       return alert("더 이상 선택할 수 없습니다.");
     }
 
+
     const isItIn = myPokemons.find((pokemon) => pokemon.id === id);
     if (isItIn) return alert("이미 선택된 포켓몬입니다.");
 
