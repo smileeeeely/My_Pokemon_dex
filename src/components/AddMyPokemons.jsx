@@ -21,5 +21,7 @@ export const AddMyPokemon = (id, myPokemons, dispatch) => {
     filteredPokemons.push({ id: crypto.randomUUID() });
   }
   dispatch(setMyPokemons(filteredPokemons));
-  toast(`${pokemons[id-1].korean_name}가(이) 추가되었습니다!`, { autoClose: 1000 });
+  toast(`${pokemons[id - 1].korean_name}가(이) 추가되었습니다!`, {
+    autoClose: 1000,
+  });
 };

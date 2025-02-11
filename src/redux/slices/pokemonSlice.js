@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
-
 const setPokemonBallRandomId = () => {
   let i = 0;
   let randomIds = [];
@@ -13,17 +11,17 @@ const setPokemonBallRandomId = () => {
 };
 
 const initialState = {
-    list: setPokemonBallRandomId(),
-}
+  list: setPokemonBallRandomId(),
+};
 const pokemonSlice = createSlice({
   name: "myPokemons",
   initialState,
   reducers: {
     setMyPokemons: (state, action) => {
-        state.list = (action.payload);
+      state.list = action.payload;
     },
     removeMyPokemon: (state, action) => {
-        state.list = (action.payload);
+      state.list = action.payload;
     },
   },
 });

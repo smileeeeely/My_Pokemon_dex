@@ -7,8 +7,6 @@ import MOCK_DATA from "./MOCK_DATA";
 import { AddMyPokemon } from "./AddMyPokemons";
 // import { setMyPokemons } from "../redux/slices/pokemonSlice";
 
-
-
 const PokemonCard = () => {
   const pokemons = MOCK_DATA;
   const myPokemons = useSelector(function (a) {

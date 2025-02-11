@@ -4,8 +4,6 @@ import reset from "styled-reset";
 import { Provider } from "react-redux";
 import store from "./redux/config/store";
 import { ToastContainer } from "react-toastify";
-// import { MyPokemonsProvider } from "./contexts/MyPokemonsContext";
-// import { PokemonsProvider } from "./contexts/PokemonsContext";
 
 const GlobalStyle = createGlobalStyle`
 ${reset}
@@ -18,11 +16,11 @@ body{
 `;
 const App = () => {
   return (
-      <Provider store={store}>
-        <ToastContainer />
-        <GlobalStyle />
-        <Router />
-      </Provider>
+    <Provider store={store}>
+      <ToastContainer />
+      <GlobalStyle />
+      <Router />
+    </Provider>
   );
 };
 
