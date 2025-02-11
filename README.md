@@ -1,8 +1,44 @@
-# React + Vite
+포켓몬 팀 빌더
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+포켓몬 팀 빌더는 사용자가 자신만의 포켓몬 팀을 만들고, 최대 6마리의 포켓몬을 추가하거나 삭제할 수 있는 웹 애플리케이션입니다. 또한 포켓몬 카드를 클릭하면 상세 정보를 확인할 수 있습니다.
 
-Currently, two official plugins are available:
+----- 주요 기능 -----
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 포켓몬 선택: 포켓몬 목록에서 원하는 포켓몬을 선택하여 최대 6마리까지 팀에 추가할 수 있습니다.
+- 팀 관리: 팀에 추가된 포켓몬을 언제든지 제거할 수 있습니다.
+- 상세 정보 보기: 포켓몬 카드를 클릭하면 해당 포켓몬의 상세 정보를 볼 수 있는 페이지로 이동합니다.
+- 반응형 디자인: 데스크톱과 모바일 환경 모두에서 원활하게 작동합니다.
+
+----- 사용 방법 -----
+1. 포켓몬 목록에서 원하는 포켓몬을 클릭하여 팀에 추가합니다.
+2. 선택한 포켓몬은 팀 섹션에서 확인할 수 있습니다.
+3. 팀에 추가된 포켓몬을 클릭하면 상세 정보 페이지로 이동합니다.
+4. 삭제 버튼을 눌러 팀에서 포켓몬을 제거할 수 있습니다.
+
+
+------ 사용된 기술 -----
+
+- 프론트엔드: React.js
+- 스타일링: CSS
+- 상태 관리: React Context API / Redux (구현 방식에 따라 다름)
+
+----- 설치 방법 -----
+
+필수 조건(다음이 설치되어 있어야 합니다)
+- Node.js (v16 이상)
+- npm 또는 yarn
+
+설치 절차
+
+1. 저장소를 클론합니다:
+git clone https://github.com/your-username/pokemon-team-builder.git
+cd pokemon-team-builder
+
+2. 필요한 패키지를 설치합니다:
+npm install  # 또는 yarn install
+
+3. 개발 서버를 실행합니다:
+npm start  # 또는 yarn start
+
+4. 브라우저에서 애플리케이션을 엽니다:
+http://localhost:3000
