@@ -103,7 +103,7 @@ export const StAddAndDeleteButton = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 40px;
+  width: 60px;
   height: 25px;
 
   &:hover {
